@@ -11,8 +11,14 @@ gem 'sqlite3', '~> 1.4'
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
+# Use boostrap
+gem "bootstrap", "~> 5.2"
 # Use simple_form for bootstrap
 gem "simple_form"
+# Use font-awesome
+gem "font-awesome-sass", "~> 6.1"
+# Use autoprefixer to a tool to add browser prefixes to css rules
+gem "autoprefixer-rails"
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 5.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
