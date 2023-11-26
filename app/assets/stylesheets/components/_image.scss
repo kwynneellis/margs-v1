@@ -1,0 +1,69 @@
+// .img-container {
+//   height: 40vh !important;
+//   max-width: 90vw;
+//   margin-bottom: 12px;
+// }
+// .main-img-container {
+// }
+
+// .quad-img-container {
+//   margin-left: 8px;
+// }
+
+// .img {
+//   // object-fit: cover;
+//   margin: 4px;
+//   border-radius: 12px;
+//   box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+//   &.quad-img {
+//     width: 200px;
+//     height: 50%;
+//   }
+//   &.main-img {
+//     width: 450px;
+//   }
+//   &.grid-img {
+//     max-height: 20vh;
+//   }
+//   &.grid-img-main {
+//     max-height: 40vh
+//   }
+// }
+
+.carousel-img {
+  height: 40vh;
+  border-radius: 12px;
+}
+
+.grid-img{
+  border-radius: 12px;
+  margin: 4px;
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+}
+
+.bg-img-1 {
+  background-image: asset-url("living-room3.jpeg");
+  background-size: cover;
+  height: 40vh;
+  margin: 4px
+}
+.bg-img-2 {
+  background-image: asset-url("master2.jpeg");
+  background-size: cover;
+  height: 20vh;
+}
+.bg-img-3 {
+  background-image: asset-url("view1.jpeg");
+  background-size: cover;
+  height: 20vh;
+}
+.bg-img-4 {
+  background-image: asset-url("view4.jpeg");
+  background-size: cover;
+  height: 20vh;
+}
+.bg-img-5 {
+  background-image: asset-url("guest-bedroom1.jpeg");
+  background-size: cover;
+  height: 20vh;
+}
