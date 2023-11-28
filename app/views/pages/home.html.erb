@@ -6,61 +6,33 @@
 
   <%= render "shared/images_grid" %>
 
-  <div class="d-flex align-items-center p-2 bg-light border-bottom">
-    <div class="flex-grow-1">
-      <h4>Entire Flat hosted by Spellers</h4>
-      <h6>4 guests | 2 bedrooms | 2 beds | 2 bathrooms | Dogs encouraged 🐾</h6>
-      </div>
-    <div class="flex-shrink-0">
-      <%= image_tag "profile.jpeg", alt: "Profile image", class: "avatar-large" %>
+  <div class="container border-bottom p-2 m-1">
+    <div class="row">
+      <div class="col-10">
+        <h4>Entire Flat hosted by Spellers</h4>
+        <h6>4 guests | 2 double bedrooms | 2 bathrooms | Kitchen & living | Pets encouraged 🐾</h6>
+      </div>  
+      <div class="col-2">
+        <%= image_tag "profile.jpeg", alt: "Profile image", class: "avatar-large" %>
+      </div>  
     </div>
   </div>
 
-  <div class="border-bottom p-2">
+  <div class="border-bottom p-2 m-1">
     <p>Lots of description about the properly here. <br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br><br>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
   </div>
-  <div class="border-bottom p-2">
-    <h4>Entire Flat hosted by Spellers</h4>
-    <ul>
-      <li>Dog Friendly</li>
-      <li>Sea view</li>
-      <li>Wifi</li>
-      <li>Kitchen</li>
-      <li>Bath & 2 Showers</li>
-      <li>2 dedicated work spaces</li>
-      <li>...</li>
-    </ul>
-    <button type="button" class="btn btn-outline-info">Show all 69 amendities</button>
-  </div>
+
+  <%= render "shared/amenities" %>
+<%#   
   <div class="border-bottom p-2">
     <h4>No reviews (yet)</h4>
   </div>
+
   <div class="border-bottom p-2">
     <h4>Where you'll be</h4>
     <div>Map of location</div>
     <img src="..." class="img-fluid" alt="...">
-  </div>
-  <div class="border-bottom p-2">
-    <h4>Things to know</h4>
-    <div class="row row-cols-3 fw-bolder">
-      <div class="col">House Rules</div>
-      <div class="col">Safety & property</div>
-      <div class="col">Cancellation policy</div>
-    </div>
-    <div class="row row-cols-3">
-      <div class="col">Check-in after 15:00</div>
-      <div class="col">Lock box</div>
-      <div class="col">Free cancellation before x.</div>
-    </div>
-    <div class="row row-cols-3">
-      <div class="col">Checkout before 11:00</div>
-      <div class="col">Smoke alarm</div>
-      <div class="col">Review the Host’s full cancellation policy </div>
-    </div>
-    <div class="row row-cols-3">
-      <div class="col">4 human guests maximum</div>
-      <div class="col">Fire extinguishers</div>
-      <div class="col">which applies even if you cancel for illness or disruptions caused by COVID-19.</div>
-    </div>
-  </div>
+  </div> %>
+  
+  <%= render "shared/things_to_know" %>
 </div>
