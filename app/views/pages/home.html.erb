@@ -6,23 +6,37 @@
 
   <%= render "shared/images_grid" %>
 
-  <div class="container border-bottom p-2 m-1">
-    <div class="row">
-      <div class="col-10">
-        <h4>Entire Flat hosted by Spellers</h4>
-        <h6>4 guests | 2 double bedrooms | 2 bathrooms | Kitchen & living | Pets encouraged 🐾</h6>
-      </div>  
-      <div class="col-2">
-        <%= image_tag "profile.jpeg", alt: "Profile image", class: "avatar-large" %>
-      </div>  
-    </div>
-  </div>
+  <div class="row row-cols-1 row-cols-md-2">
+    <div class="col-12 col-md-6 col-lg-8">
+      <div class="container border-bottom p-2 m-1">
+        <div class="row">
+          <div class="col-10">
+            <h4>Entire Flat hosted by Spellers</h4>
+            <h6>4 guests | 2 double bedrooms | 2 bathrooms | Kitchen & living | Pets encouraged 🐾</h6>
+          </div>  
+          <div class="col-2">
+            <%= image_tag "profile.jpeg", alt: "Profile image", class: "avatar-large" %>
+          </div>  
+        </div>
+      </div>
 
-  <div class="border-bottom p-2 m-1">
-    <p>Lots of description about the properly here. <br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br><br>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+      <div class="p-2 m-1">
+        <p>Lots of description about the properly here. <br><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br><br>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+      </div>
+
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="container p-2 m-1">
+        <%= render "shared/booking_calculator" %>
+        </div>
+      </div>
   </div>
 
   <%= render "shared/amenities" %>
+
+  <%= render "shared/things_to_know" %>
+
 <%#   
   <div class="border-bottom p-2">
     <h4>No reviews (yet)</h4>
@@ -34,5 +48,4 @@
     <img src="..." class="img-fluid" alt="...">
   </div> %>
   
-  <%= render "shared/things_to_know" %>
 </div>
