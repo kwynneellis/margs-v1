@@ -1,10 +1,8 @@
 <div class="container">
   <h2><%= @property.address %></h2>
   <p><%= @property.description %></p>
-  <p>Maximum guests: <%= @property.guests %></p>
-  <p>No. of bedrooms: <%= @property.bedrooms %></p>
-  <p>No. of bathrooms: <%= @property.bathrooms %></p>
-  <p>Pets allowed: <%= @property.pet_friendly %></p>
-  <p>Price per night: £<%= @property.price_per_night %></p>
+  <p><%= @property.bedrooms %> bedrooms, <%= @property.bathrooms %> bathrooms</p>
+  <p>Up to <%= @property.guests %> (human) guests. <%= @property.pet_friendly ? "Pets are encouraged!" : "" %></p>
+  <p>£<%= @property.price_per_night %> per night for a <%= @property.minimum_nights %> nights minimum stay.</p>
   <p>Cleaning fee: £<%= @property.cleaning_fee %></p>
 </div>
