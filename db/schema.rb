@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_12_03_091202) do
+ActiveRecord::Schema.define(version: 2023_12_03_201424) do
 
   create_table "enquiries", force: :cascade do |t|
-    t.datetime "check_in"
-    t.datetime "check_out"
+    t.date "check_in"
+    t.date "check_out"
     t.integer "nights"
     t.integer "guests"
     t.boolean "with_pets"
