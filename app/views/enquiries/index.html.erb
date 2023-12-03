@@ -1,0 +1,8 @@
+<h1>All enquiries</h1>
+<ul>
+  <% @enquires.each do |enquiry| %>
+    <li><p>By <%= enquiry.first_name %> <%= enquiry.last_name %> for <%= enquiry.guests %> guests.<br>
+          To stay: <%= enquiry.check_in %> - <%= enquiry.check_out %><br>
+          Message: <%= enquiry.message %></p></li>
+  <% end %>
+</ul>

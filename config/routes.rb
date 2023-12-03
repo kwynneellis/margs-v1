@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   get "contact", to: "pages#contact"
 
   resources :properties, only: [:index, :show] do
-    resources :enquiries, only: [:new, :create]
+    resources :enquiries, only: [:new, :create, :index]
   end
 end

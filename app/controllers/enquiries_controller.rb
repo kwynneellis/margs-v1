@@ -1,5 +1,5 @@
 class EnquiriesController < ApplicationController
-  before_action :set_property, only: %i[new create]
+  before_action :set_property, only: %i[new create index]
 
   def new
     @enquiry = Enquiry.new
@@ -13,6 +13,10 @@ class EnquiriesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def index
+    @enquiries = Enquiry.all
   end
 
   private
