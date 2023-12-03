@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_12_02_115327) do
+ActiveRecord::Schema.define(version: 2023_12_03_075406) do
 
   create_table "properties", force: :cascade do |t|
     t.string "address"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2023_12_02_115327) do
     t.integer "price_per_night"
     t.integer "minimum_nights"
     t.integer "cleaning_fee"
-    t.integer "guests"
+    t.integer "max_guests"
     t.integer "bedrooms"
     t.integer "bathrooms"
     t.boolean "pet_friendly"
