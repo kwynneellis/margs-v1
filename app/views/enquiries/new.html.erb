@@ -1,11 +1,12 @@
 <div class="container">
-  <h1>New enquiry</h1>
   <%= simple_form_for [@property, @enquiry] do |f| %>
+  <h2>Thinking about staying at <%= @property.address %>?</h2>
+  <h3>I'd love to hear from you</h3>
     <%= f.input :first_name %>
     <%= f.input :last_name %>
     <%= f.input :check_in, as: :date, html5: true, label: 'Check in' %>
     <%= f.input :check_out, as: :date, html5: true, label: 'Check out' %>
-    <%= f.input :guests, as: :select, collection: [1,2,3,4] %>
+    <%= f.input :guests, as: :select, collection: Property::GUESTS, label: "Number of guests" %>
     <%= f.input :with_pets %>
     <%= f.input :message %>
     <%= f.submit "Enquire now", class: "btn btn-primary" %>
