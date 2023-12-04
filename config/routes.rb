@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get "about", to: "pages#about"
   get "contact", to: "pages#contact"
+  get "recommendations", to: "pages#recommendations"
 
   resources :properties, only: [:index, :show] do
     resources :enquiries, only: [:new, :create, :index]
