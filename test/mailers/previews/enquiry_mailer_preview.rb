@@ -3,7 +3,9 @@ class EnquiryMailerPreview < ActionMailer::Preview
 
   # Preview this email at http://localhost:3000/rails/mailers/enquiry_mailer/thanks
   def thanks
-    EnquiryMailer.thanks
+    enquiry = Enquiry.last
+    
+    EnquiryMailer.with(enquiry: enquiry).thanks
   end
 
 end
