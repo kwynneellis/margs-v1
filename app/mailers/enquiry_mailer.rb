@@ -6,8 +6,8 @@ class EnquiryMailer < ApplicationMailer
   #   en.enquiry_mailer.thanks.subject
   #
   def thanks
-    @greeting = "Hi"
+    @greeting = "Hi there 👋,"
 
-    mail to: "to@example.org"
+    mail to: "k.wynneellis@gmail.com", subject: "Going to MarGreat?"
   end
 end
