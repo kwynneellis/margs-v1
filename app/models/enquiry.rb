@@ -3,7 +3,6 @@ class Enquiry < ApplicationRecord
 
   validates :first_name, :last_name, :email, :check_in, :check_out, presence: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP } 
-  validates :end_date, comparison: { greater_than: :start_date }
 
   after_create :send_thanks_email
 
