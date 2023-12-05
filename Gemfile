@@ -9,6 +9,8 @@ gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
+# Devise is an authentication gem for Rails
+gem "devise"
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Use boostrap
