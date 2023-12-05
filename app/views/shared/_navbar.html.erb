@@ -7,18 +7,21 @@
     </ul>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <ul class="navbar-nav">
+        <% if user_signed_in? %>
         <li class="nav-item">
           <%= link_to "About", about_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Get in touch", new_property_enquiry_path(property_id: 1), class: "nav-link" %>
-        </li>
-        <li class="nav-item">
           <%= link_to "All enquiries", property_enquiries_path(property_id: 1), class: "nav-link" %>
+        </li>
+        <% else %>
+        <li class="nav-item">
+          <%= link_to "Get in touch", new_property_enquiry_path(property_id: 1), class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "So MarGreat 🍴", recommendations_path, class: "nav-link" %>
         </li>
+        <% end %>
       </ul>
     </div>
   </div>
