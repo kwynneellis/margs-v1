@@ -1,4 +1,5 @@
 class EnquiriesController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[new create]
   before_action :set_property, only: %i[new create index]
 
   def new

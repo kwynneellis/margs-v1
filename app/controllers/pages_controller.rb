@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[home recommendations]
+
   def home
   end
 
@@ -6,5 +8,8 @@ class PagesController < ApplicationController
   end
 
   def contact
+  end
+
+  def recommendations
   end
 end
