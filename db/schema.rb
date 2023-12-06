@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_12_05_215954) do
+ActiveRecord::Schema.define(version: 2023_12_06_174733) do
 
   create_table "enquiries", force: :cascade do |t|
     t.date "check_in"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2023_12_05_215954) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "message"
     t.string "email"
+    t.string "mobile"
     t.index ["property_id"], name: "index_enquiries_on_property_id"
   end
 
