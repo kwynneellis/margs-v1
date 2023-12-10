@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2023_12_06_174733) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "enquiries", force: :cascade do |t|
     t.date "check_in"
     t.date "check_out"
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 2023_12_06_174733) do
     t.boolean "with_pets"
     t.string "first_name"
     t.string "last_name"
-    t.integer "property_id", null: false
+    t.bigint "property_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "message"
