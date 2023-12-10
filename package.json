@@ -12,10 +12,10 @@
     "webpack-cli": "^3.3.12"
   },
   "version": "0.1.0",
+  "engines": {
+    "node": "14.21.3"
+  },
   "devDependencies": {
     "webpack-dev-server": "^3"
-  },
-  "scripts": {
-    "build": "webpack --config webpack.config.js"
- }
+  }
 }
