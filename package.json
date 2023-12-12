@@ -12,13 +12,7 @@
     "webpack-cli": "^3.3.12"
   },
   "version": "0.1.0",
-  "engines": {
-    "yarn": "1.22.19"
-  },
   "devDependencies": {
     "webpack-dev-server": "^3"
-  },
-  "scripts": {
-    "start": "node index.js"
   }
 }
