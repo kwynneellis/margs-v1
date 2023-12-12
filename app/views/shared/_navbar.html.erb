@@ -4,22 +4,25 @@
       <li class="nav-item active">
         <%= link_to "🎈 Home", root_path, class: "nav-link" %>
       </li>
-    </ul>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <ul class="navbar-nav">
-        <% if user_signed_in? %>
-        <li class="nav-item">
-          <%= link_to "About", about_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "All enquiries", property_enquiries_path(property_id: 1), class: "nav-link" %>
-        </li>
-        <% else %>
-        <li class="nav-item">
+      <li class="nav-item">
           <%= link_to "Get in touch", new_property_enquiry_path(property_id: 1), class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "So MarGreat 🍴", recommendations_path, class: "nav-link" %>
+        </li>
+    </ul>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <ul class="navbar-nav">
+        <% if user_signed_in? %>
+        <li class="nav-item dropdown">
+          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= image_tag "profile.jpeg", alt: "Dropdown menu", class: "avatar" %>
+          </a>
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <%= link_to "All enquiries", property_enquiries_path(property_id: 1), class: "dropdown-item" %>
+            <%= link_to "Edit property", edit_property_path(id: 1), class: "dropdown-item" %>
+            <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+          </div>
         </li>
         <% end %>
       </ul>
