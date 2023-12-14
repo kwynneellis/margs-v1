@@ -16,8 +16,6 @@
     "webpack-dev-server": "^3"
   },
   "engines": {
-    "node": "20.x",
-    "npm": "10.x",
     "yarn": "1.x"
   }
 }
