@@ -18,7 +18,7 @@
   },
   "engines": {
     "yarn": "3.x",
-    "node": "20.x"
+    "node": "18.x"
   },
   "packageManager": "yarn@3.7.0"
 }
