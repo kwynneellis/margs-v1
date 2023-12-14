@@ -17,6 +17,8 @@
     "webpack-dev-server": "^3"
   },
   "engines": {
-    "yarn": "1.x"
-  }
+    "yarn": "4.x",
+    "node": "21.x"
+  },
+  "packageManager": "yarn@4.0.2"
 }
