@@ -22,13 +22,13 @@
                 <% end %></h6>
           </div>  
           <div class="col-1 p-0">
-            <% if current_user.admin? %>
-              <%= link_to edit_property_path(@property.id) do %>
-                <div>
-                  <i class="fa-solid fa-sm fa-pen-to-square"></i>
-                </div>
-              <% end %>
-            <% end %>
+            <%# <% if current_user.admin? %> 
+              <%# <%= link_to edit_property_path(@property.id) do %> 
+                <%# <div> %>
+                  <%# <i class="fa-solid fa-sm fa-pen-to-square"></i> %>
+                <%# </div> %>
+              <%# <% end %> 
+            <%# <% end %> 
           </div>  
           <div class="col-2">
             <%= image_tag "profile.jpeg", alt: "Profile image", class: "avatar-large" %>

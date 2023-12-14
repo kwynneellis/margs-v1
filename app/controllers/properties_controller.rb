@@ -1,5 +1,7 @@
 class PropertiesController < ApplicationController
-  before_action :set_user, only: %i[show edit update]
+  skip_before_action :authenticate_user!, only: %i[show]
+
+  before_action :set_user, only: %i[edit update]
   before_action :set_property, only: %i[show edit update]
 
   def index
