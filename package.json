@@ -2,7 +2,6 @@
   "name": "margs-v1",
   "private": true,
   "dependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "7.21.11",
     "@popperjs/core": "^2.11.8",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
@@ -14,6 +13,7 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "7.21.11",
     "webpack-dev-server": "^3"
   },
   "engines": {
