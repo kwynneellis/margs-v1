@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
+gem 'rails', '7.0.1'
 # Use postgres as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
@@ -21,12 +21,12 @@ gem "simple_form"
 gem "font-awesome-sass", "~> 6.1"
 # Use autoprefixer to a tool to add browser prefixes to css rules
 gem "autoprefixer-rails"
-# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 5.0'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
+# Sprockets is used to create and deliver web assets
+gem "sprockets-rails"
+# Stimulus is a JavaScript library
+gem "stimulus-rails"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -67,4 +67,4 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem "importmap-rails", "~> 1.2"
+gem "importmap-rails"
