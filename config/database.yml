@@ -1,17 +1,25 @@
-development:
+default: &default
   adapter: postgresql
-  database: my_database_development
-  pool: 5
+  encoding: unicode
+  host: localhost
+  port: 5432
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
+
+development:
+  <<: *default
+  database: margs_v1_development
 
 test:
-  adapter: postgresql
-  database: my_database_test
-  pool: 5
-  timeout: 5000
+  <<: *default
+  database: margs_v1_test
+
+staging:
+  <<: *default
+  database: margs_v1_staging
 
 production:
-  adapter: postgresql
-  database: my_database_production
-  pool: 5
-  timeout: 5000
+  <<: *default
+  database: margs_v1_production
