@@ -1,0 +1,16 @@
+<p>Good news! <%= @enquiry.first_name.capitalize %> <%= @enquiry.last_name.capitalize %> has enquired about staying in Margs</p>
+
+<p>Their deets:</p>
+<p>
+  Name: <%= @enquiry.first_name.capitalize %> <%= @enquiry.last_name.capitalize %><br>
+  Email: <%= @enquiry.email %><br>
+  Phone: <%= @enquiry.mobile %><br><br>
+  Check in: <%= @enquiry.check_in.strftime("%a %d %b %Y") %><br>
+  Check out: <%= @enquiry.check_out.strftime("%a %d %b %Y") %><br>
+  Nights: <%= (@enquiry.check_out - @enquiry.check_in).to_i %><br>
+  No. of guests: <%= @enquiry.guests %><br>
+  With pets: <%= @enquiry.with_pets %><br><br>
+  Message: <%= @enquiry.message %><br>
+</p>
+
+<p>Enquiry #<%= @enquiry.id %> in the bag</p>

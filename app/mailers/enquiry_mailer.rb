@@ -6,8 +6,22 @@ class EnquiryMailer < ApplicationMailer
   #   en.enquiry_mailer.thanks.subject
   #
   def thanks
-    @greeting = "Hi there 👋,"
+    @enquiry = params[:enquiry]
+    @greeting = "Hi #{@enquiry.first_name.capitalize} 👋,"
 
-    mail to: "k.wynneellis@gmail.com", subject: "Going to MarGreat?"
+    mail(
+      to: @enquiry.email, 
+      subject: "Going to MarGreat?"
+    )
   end
+
+  def new_enquiry
+    @enquiry = params[:enquiry]
+
+    mail(
+      to: 'k.wynneellis@gmail.com', 
+      subject: "New Marg-cation, coming in HOT"
+    )
+  end
+
 end

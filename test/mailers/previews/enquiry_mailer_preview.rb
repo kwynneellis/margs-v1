@@ -8,4 +8,10 @@ class EnquiryMailerPreview < ActionMailer::Preview
     EnquiryMailer.with(enquiry: enquiry).thanks
   end
 
+  def new_enquiry
+    enquiry = Enquiry.last
+    
+    EnquiryMailer.with(enquiry: enquiry).new_enquiry
+  end
+
 end
