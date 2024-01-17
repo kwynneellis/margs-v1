@@ -9,6 +9,7 @@ class PropertiesController < ApplicationController
   end
 
   def show
+    @enquiry = Enquiry.new
   end
 
   def edit
