@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8">
+      <%= link_to property_enquiries_path(property_id: @property.id) do %>
+        <div class="m-2">
+          <i class="fa-solid fa-arrow-left"></i>
+        </div>
+      <% end %>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= @enquiry.first_name.capitalize %> <%= @enquiry.last_name.capitalize %></h5>
+          <p class="card-text text-secondary fw-light">Enquired at <%= @enquiry.created_at.strftime("%H:%M %d-%m-%y") %></p>
+        </div>
+        <ul class="list-group list-group-flush">
+
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-3">Message:</div>
+              <div class="col"><%= @enquiry.message %></div>
+            </div>
+          </li>
+
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-3">Nights:</div>
+              <div class="col"><%= (@enquiry.check_out - @enquiry.check_in).to_i %></div>
+            </div>
+          </li>
+
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-3">Check-in:</div>
+              <div class="col"><%= @enquiry.check_in.strftime("%a %d %b %Y") %></div>
+            </div>
+          </li>
+
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-3">Check-out:</div>
+              <div class="col"><%= @enquiry.check_out.strftime("%a %d %b %Y") %></div>
+            </div>
+          </li>
+
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-3">Guests:</div>
+              <div class="col"><%= @enquiry.guests %></div>
+            </div>
+          </li>
+
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-3">Pets:</div>
+              <% if @enquiry.with_pets %>
+                <div class="col">Yup 🐾</div>
+              <% else %>
+                <div class="col">Nope</div>
+              <% end %>
+              </div>
+          </li>
+
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-3">Email:</div>
+              <div class="col"><%= @enquiry.email %></div>
+            </div>
+          </li>
+
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-3">Mobile:</div>
+              <div class="col"><%= @enquiry.mobile %></div>
+            </div>
+          </li>
+
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

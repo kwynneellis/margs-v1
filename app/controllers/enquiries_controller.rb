@@ -1,6 +1,7 @@
 class EnquiriesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[new create]
-  before_action :set_property, only: %i[new create index]
+  before_action :set_property, only: %i[new create index show]
+  before_action :set_enquiry, only: %i[show]
 
   def new
     @enquiry = Enquiry.new
@@ -20,10 +21,17 @@ class EnquiriesController < ApplicationController
     @enquiries = Enquiry.all
   end
 
+  def show
+  end
+
   private
 
   def set_property
     @property = Property.find(params[:property_id])
+  end
+
+  def set_enquiry
+    @enquiry = Enquiry.find(params[:id])
   end
 
   def enquiry_params

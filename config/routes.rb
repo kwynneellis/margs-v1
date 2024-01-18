@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   get "recommendations", to: "pages#recommendations"
 
   resources :properties, only: [:index, :show, :edit, :update] do
-    resources :enquiries, only: [:new, :create, :index]
+    resources :enquiries, only: [:new, :create, :index, :show]
   end
 end

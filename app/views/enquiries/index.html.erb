@@ -19,7 +19,7 @@
       <% @enquiries.each do |enquiry| %>
         <tr>
           <th scope="row"><%= enquiry.id %></th>
-          <td><%= enquiry.created_at.strftime("%d-%m-%y") %></td>
+          <td class="fw-light"><%= enquiry.created_at.strftime("%H:%M %d-%m-%y") %></td>
           <td><%= enquiry.first_name.capitalize %> <%= enquiry.last_name.capitalize %></td>
           <td><%= (enquiry.check_out - enquiry.check_in).to_i %></td>
           <td><%= enquiry.check_in.strftime("%d %b %Y") %></td>
@@ -28,9 +28,9 @@
           <% if enquiry.with_pets %>
             <td>✅</td>
           <% else %>
-            <td>❎</td>
+            <td>🔘</td>
           <% end %>
-          <td><%= link_to "View", "#" %></td>
+          <td><%= link_to "View", property_enquiry_path(property_id: enquiry.property_id, id: enquiry.id) %></td>
         </tr>
       <% end %>
     </tbody>
