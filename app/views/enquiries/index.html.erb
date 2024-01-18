@@ -1,14 +1,38 @@
 <div class="container">
   <h2>All Enquiries</h2>
-    <ul class="list-group list-group-flush">
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Created at</th></th>
+        <th scope="col">Name</th>
+        <th scope="col">Nights</th>
+        <th scope="col">Check-in</th>
+        <th scope="col">Check-out</th>
+        <th scope="col">Guests</th>
+        <th scope="col">Pets</th>
+        <th scope="col">View</th>
+      </tr>
+    </thead>
+    <tbody>
       <% @enquiries.each do |enquiry| %>
-        <li class="list-group-item">
-          From <%= enquiry.first_name.capitalize %> <%= enquiry.last_name.capitalize %><br>
-          <%= enquiry.guests %> guests<br>
-          Check in: <%= enquiry.check_in %><br>
-          Check out: <%= enquiry.check_out %><br>
-          Message: <%= enquiry.message %>
-        </li>
+        <tr>
+          <th scope="row"><%= enquiry.id %></th>
+          <td><%= enquiry.created_at.strftime("%d-%m-%y") %></td>
+          <td><%= enquiry.first_name.capitalize %> <%= enquiry.last_name.capitalize %></td>
+          <td><%= (enquiry.check_out - enquiry.check_in).to_i %></td>
+          <td><%= enquiry.check_in.strftime("%d %b %Y") %></td>
+          <td><%= enquiry.check_out.strftime("%d %b %Y") %></td>
+          <td><%= enquiry.guests %></td>
+          <% if enquiry.with_pets %>
+            <td>✅</td>
+          <% else %>
+            <td>❎</td>
+          <% end %>
+          <td><%= link_to "View", "#" %></td>
+        </tr>
       <% end %>
-    </ul>
+    </tbody>
+  </table>
 </div>
