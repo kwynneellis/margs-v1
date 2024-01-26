@@ -9,6 +9,8 @@ gem 'rails', '7.0.1'
 gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
+# Asset pipeline builder
+gem "importmap-rails"
 # Devise is an authentication gem for Rails
 gem "devise"
 # Use SCSS for stylesheets
@@ -27,8 +29,10 @@ gem 'jbuilder', '~> 2.7'
 gem "sprockets-rails"
 # Stimulus is a JavaScript library
 gem "stimulus-rails"
+# Turbo accelerates links and form submissions 
+gem 'turbo-rails'
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
+gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -66,7 +70,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-gem "importmap-rails"
 
 gem 'dotenv-rails', groups: [:development, :test]
