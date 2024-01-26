@@ -3,12 +3,22 @@
     <div class="col-12 col-md-8">
       <%= link_to property_enquiries_path(property_id: @property.id) do %>
         <div class="m-2">
-          <i class="fa-solid fa-arrow-left"></i>
+          <i class="fa-solid fa-arrow-left"></i> All enquiries
         </div>
       <% end %>
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title"><%= @enquiry.first_name.capitalize %> <%= @enquiry.last_name.capitalize %></h5>
+          <div class="row">
+            <div class="col">
+              <h5 class="card-title"><%= @enquiry.first_name.capitalize %> <%= @enquiry.last_name.capitalize %></h5>
+            </div>
+            <div class="col-1">
+                <%= link_to property_enquiry_path(property_id: @property.id, id: @enquiry),
+                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                    <i class="fa-solid fa-trash"></i>
+                <% end %>
+            </div>
+          </div>
           <p class="card-text text-secondary fw-light">Enquired at <%= @enquiry.created_at.strftime("%H:%M %d-%m-%y") %></p>
         </div>
         <ul class="list-group list-group-flush">
@@ -74,9 +84,8 @@
           </li>
 
         </ul>
-        <div class="card-body">
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
+        <div class="card-body justify-content-between">
+          <a href="#" class="card-link">Link to something helpful</a>
         </div>
       </div>
     </div>

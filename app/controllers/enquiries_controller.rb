@@ -1,7 +1,7 @@
 class EnquiriesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[new create]
-  before_action :set_property, only: %i[new create index show]
-  before_action :set_enquiry, only: %i[show]
+  before_action :set_property, only: %i[new create index show destroy]
+  before_action :set_enquiry, only: %i[show destroy]
 
   def new
     @enquiry = Enquiry.new
@@ -22,6 +22,12 @@ class EnquiriesController < ApplicationController
   end
 
   def show
+  end
+
+  def destroy
+    @enquiry.destroy
+
+    redirect_to property_enquiries_path(property_id: @property.id), status: :see_other
   end
 
   private
