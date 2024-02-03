@@ -1,4 +1,4 @@
-<div class="booking-calculator-container container">
+<div class="booking-calculator-container container" data-controller="calculate-booking" data-calculate-booking-price-value="<%= @property.price_per_night %>" data-calculate-booking-cleaning-fee-value="<%= @property.cleaning_fee %>">
   <div class="row border-bottom mb-2">
     <div class="col">
       <h6 class="text-dark">The whole property</h6>
@@ -7,39 +7,31 @@
   </div>
     <%= simple_form_for [@property, @enquiry] do |f| %>
       <div class="row mt-2">
-        <div class="col"><%= f.label :check_in, label: 'Check-in' %></div>
-        <div class="col"><%= f.input :check_in, as: :date, html5: true, label: false %></div>
+        <div class="col"><%= f.input :check_in, html5: true, input_html: { data: { calculate_booking_target: 'check_in', action: 'change->calculate-booking#update' }, min: Date.today } %></div>
       </div>
       <div class="row mt-2">
-        <div class="col"><%= f.label :check_out, label: 'Check-out' %></div>
-        <div class="col"><%= f.input :check_out, as: :date, html5: true, label: false %></div>
+        <div class="col"><%= f.input :check_out, html5: true, input_html: { data: { calculate_booking_target: 'check_out', action: 'change->calculate-booking#update' }, min: Date.today } %></div>
       </div>
     <% end %>
 
-    <% if enquiry.check_in && enquiry.check_out %>
-      <% @enquiry.nights = (@enquiry.check_out - @enquiry.check_in).to_i %>
-      <% subtotal = @property.price_per_night * @enquiry.nights %>
-      <div class="row mt-2">
-        <div class="col"><h6 class="p-1">£<%= @property.price_per_night %> x <%= @enquiry.nights %> nights</h6></div>
-        <div class="col text-end"><h6 class="p-1">£<%= subtotal %></h6></div>
-      </div>
-      <% else %>
-      <% subtotal = @property.price_per_night * @property.minimum_nights %>
-      <div class="row mt-2">
-        <div class="col-9"><h6 class="p-1">£<%= @property.price_per_night %> per night
-        <span><small><br>minimum stay: <%= @property.minimum_nights %> nights</small></span></h6></div>
-        <div class="col text-end"><h6 class="p-1">£<%= subtotal %></h6></div>
-      </div>
-    <% end %>
 
-  
-  <div class="row border-bottom">
-    <div class="col"><h6 class="p-1">Cleaning fee</h6></div>
-    <div class="col text-end"><h6 class="p-1">£<%= @property.cleaning_fee.nil? ? "" : @property.cleaning_fee %></h6></h6></div>
+  <div class="row">
+    <p class='d-flex align-items-center justify-content-between'>
+      <span>Cleaning fee</span>
+      <span>£<%= @property.cleaning_fee.nil? ? "" : @property.cleaning_fee %></span>
+    </p>
   </div>
+
+  <div class="row">
+    <p class='d-flex align-items-center justify-content-between'>
+      <span data-calculate-booking-target='info'><%= @property.minimum_nights %>-night minimum</span>
+      <span data-calculate-booking-target='price'>£<%= @property.price_per_night * @property.minimum_nights%></span>
+    </p>
+  </div>
+  
   <div class="row my-2">
     <div class="col"><h5>Total</h5></div>
-    <div class="col text-end"><h5>£<%= subtotal + @property.cleaning_fee %></h5></div>
+    <div class="col text-end"><h5><p><span class='fw-bold' data-calculate-booking-target='total'></span></p></h5></div>
   </div>
   <div class="row">
     <div class="col">

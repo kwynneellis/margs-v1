@@ -2,3 +2,6 @@
 import "controllers"
 import "bootstrap"
 import "@hotwired/turbo-rails"
+
+import CalculateBookingController from "./controllers/calculate_booking_controller.js"
+Stimulus.register("calculate-booking", CalculateBookingController)
