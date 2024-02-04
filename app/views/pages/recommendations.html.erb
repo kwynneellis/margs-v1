@@ -1,30 +1,40 @@
 <div class="container">
-  <h1>Check out these guys...</h1>
-  <div class="row">
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Fortes Cafe 🍳</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
+  <div class="recommendation-container">
+    <h1>Check out these guys...</h1>
+    <div class="row">
+      <div class="d-flex flex-wrap">
 
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Bottega Caruso 🍝</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
+        <div class="card m-2" style="width: 15rem; height: 20rem;">
+          <%= image_tag "view5.jpeg", alt: "sunset with a drink", class: "d-block w-100", style: "height: 10rem;" %>
+          <div class="card-body">
+            <p class="card-text"><span class="fw-bold"><%= "Fortes Cafe 🍳".truncate(25) %></span><br><span><%= "Some quick example text to build on the card title and".truncate(40) %></span></p>
+            <a href="#" class="btn btn-primary">Link</a>
+          </div>
+        </div>
 
-    <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Dorys 🐟</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="card m-2" style="width: 15rem; height: 20rem;">
+          <%= image_tag "view5.jpeg", alt: "sunset with a drink", class: "d-block w-100", style: "height: 10rem;" %>
+          <div class="card-body">
+            <p class="card-text"><span class="fw-bold"><%= "Bottega Caruso 🍝".truncate(25) %></span><br><span><%= "Some quick example text to build on the card title and".truncate(40) %></span></p>
+            <a href="#" class="btn btn-primary">Link</a>
+          </div>
+        </div>
+
+        <div class="card m-2" style="width: 15rem; height: 20rem;">
+          <%= image_tag "view5.jpeg", alt: "sunset with a drink", class: "d-block w-100", style: "height: 10rem;" %>
+          <div class="card-body">
+            <p class="card-text"><span class="fw-bold"><%= "Dorys 🐟".truncate(25) %></span><br><span><%= "Some quick example text to build on the card title and".truncate(40) %></span></p>
+            <a href="#" class="btn btn-primary">Link</a>
+          </div>
+        </div>
+
+        <div class="card m-2" style="width: 15rem; height: 20rem;">
+          <%= image_tag "view5.jpeg", alt: "sunset with a drink", class: "d-block w-100", style: "height: 10rem;" %>
+          <div class="card-body">
+            <p class="card-text"><span class="fw-bold"><%= "Title 🍳".truncate(25) %></span><br><span><%= "Some quick example text to build on the card title and".truncate(40) %></span></p>
+            <a href="#" class="btn btn-primary">Link</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
