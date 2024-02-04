@@ -8,6 +8,7 @@ export default class extends Controller {
   };
 
   update() {
+    console.log("connected to update")
     const pricePerDay = parseInt(this.priceValue, 10);
     const cleaningFee = parseInt(this.cleaningFeeValue, 10);
     // make sure the user has chosen a check in and check out
