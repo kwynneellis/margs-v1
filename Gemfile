@@ -14,7 +14,7 @@ gem "importmap-rails"
 # Devise is an authentication gem for Rails
 gem "devise"
 # Use SCSS for stylesheets
-gem 'sass-rails', '>= 6'
+gem 'sassc-rails'
 # Use boostrap
 gem "bootstrap", "~> 5.2"
 # Use simple_form for bootstrap
