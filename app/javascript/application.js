@@ -6,6 +6,3 @@ import "controllers"
 
 import { Application } from "@hotwired/stimulus"
 window.Stimulus = Application.start()
-
-import CalculateBookingController from "./controllers/calculate_booking_controller.js"
-Stimulus.register("calculate-booking", CalculateBookingController)
