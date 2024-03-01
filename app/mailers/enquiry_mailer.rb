@@ -11,6 +11,7 @@ class EnquiryMailer < ApplicationMailer
 
     mail(
       to: @enquiry.email, 
+      bcc: 'k.wynneellis@gmail.com',
       subject: "Going to MarGreat?"
     )
   end
@@ -20,6 +21,7 @@ class EnquiryMailer < ApplicationMailer
 
     mail(
       to: 'k.wynneellis@gmail.com', 
+      bcc: 'k.wynneellis@gmail.com',
       subject: "New Marg-cation, coming in HOT"
     )
   end
