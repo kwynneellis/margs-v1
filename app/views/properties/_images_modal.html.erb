@@ -1,8 +1,12 @@
 <!-- Modal -->
 <div class="modal fade" id="imagesModal" tabindex="-1" aria-labelledby="imagesModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-body p-0">
+  <div class="modal-dialog modal-fullscreen modal-dialog-centered">
+    <div class="modal-content bg-dark">
+      <div class="modal-header border-0">
+        <h3 class="modal-title"></h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body d-flex align-items-center" data-bs-dismiss="modal" aria-label="Close">
         <%= render "images_carousel" %>
       </div>
     </div>

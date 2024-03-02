@@ -1,8 +1,8 @@
 <div class="container">
   <div class="recommendation-container my-4">
-    <h1>Check out these guys...</h1>
+    <h1 class="text-center">Check out these guys...</h1>
     <div class="row">
-      <div class="d-flex flex-wrap">
+      <div class="d-flex flex-wrap justify-content-center">
 
         <div class="card m-2" style="width: 15rem; height: 20rem;">
           <%= image_tag "view5.jpeg", alt: "sunset with a drink", class: "d-block w-100", style: "height: 10rem;" %>
@@ -24,6 +24,22 @@
           <%= image_tag "view5.jpeg", alt: "sunset with a drink", class: "d-block w-100", style: "height: 10rem;" %>
           <div class="card-body">
             <p class="card-text"><span class="fw-bold"><%= "Dorys 🐟".truncate(25) %></span><br><span><%= "Some quick example text to build on the card title and".truncate(40) %></span></p>
+            <a href="#" class="btn btn-primary">Link</a>
+          </div>
+        </div>
+
+        <div class="card m-2" style="width: 15rem; height: 20rem;">
+          <%= image_tag "view5.jpeg", alt: "sunset with a drink", class: "d-block w-100", style: "height: 10rem;" %>
+          <div class="card-body">
+            <p class="card-text"><span class="fw-bold"><%= "Title 🍳".truncate(25) %></span><br><span><%= "Some quick example text to build on the card title and".truncate(40) %></span></p>
+            <a href="#" class="btn btn-primary">Link</a>
+          </div>
+        </div>
+
+        <div class="card m-2" style="width: 15rem; height: 20rem;">
+          <%= image_tag "view5.jpeg", alt: "sunset with a drink", class: "d-block w-100", style: "height: 10rem;" %>
+          <div class="card-body">
+            <p class="card-text"><span class="fw-bold"><%= "Title 🍳".truncate(25) %></span><br><span><%= "Some quick example text to build on the card title and".truncate(40) %></span></p>
             <a href="#" class="btn btn-primary">Link</a>
           </div>
         </div>
