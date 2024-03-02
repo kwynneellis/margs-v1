@@ -1,38 +1,40 @@
 <div class="container">
-  <h2>All Enquiries</h2>
+  <div class="my-4">
+    <h2>All Enquiries</h2>
 
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Created at</th></th>
-        <th scope="col">Name</th>
-        <th scope="col">Nights</th>
-        <th scope="col">Check-in</th>
-        <th scope="col">Check-out</th>
-        <th scope="col">Guests</th>
-        <th scope="col">Pets</th>
-        <th scope="col">View</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @enquiries.each do |enquiry| %>
+    <table class="table table-striped">
+      <thead>
         <tr>
-          <th scope="row"><%= enquiry.id %></th>
-          <td class="fw-light"><%= enquiry.created_at.strftime("%H:%M %d-%m-%y") %></td>
-          <td><%= enquiry.first_name.capitalize %> <%= enquiry.last_name.capitalize %></td>
-          <td><%= (enquiry.check_out - enquiry.check_in).to_i %></td>
-          <td><%= enquiry.check_in.strftime("%d %b %Y") %></td>
-          <td><%= enquiry.check_out.strftime("%d %b %Y") %></td>
-          <td><%= enquiry.guests %></td>
-          <% if enquiry.with_pets %>
-            <td>✅</td>
-          <% else %>
-            <td>🔘</td>
-          <% end %>
-          <td><%= link_to "View", property_enquiry_path(property_id: enquiry.property_id, id: enquiry.id) %></td>
+          <th scope="col">#</th>
+          <th scope="col">Created at</th></th>
+          <th scope="col">Name</th>
+          <th scope="col">Nights</th>
+          <th scope="col">Check-in</th>
+          <th scope="col">Check-out</th>
+          <th scope="col">Guests</th>
+          <th scope="col">Pets</th>
+          <th scope="col">View</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% @enquiries.each do |enquiry| %>
+          <tr>
+            <th scope="row"><%= enquiry.id %></th>
+            <td class="fw-light"><%= enquiry.created_at.strftime("%H:%M %d-%m-%y") %></td>
+            <td><%= enquiry.first_name.capitalize %> <%= enquiry.last_name.capitalize %></td>
+            <td><%= (enquiry.check_out - enquiry.check_in).to_i %></td>
+            <td><%= enquiry.check_in.strftime("%d %b %Y") %></td>
+            <td><%= enquiry.check_out.strftime("%d %b %Y") %></td>
+            <td><%= enquiry.guests %></td>
+            <% if enquiry.with_pets %>
+              <td>✅</td>
+            <% else %>
+              <td>🔘</td>
+            <% end %>
+            <td><%= link_to "View", property_enquiry_path(property_id: enquiry.property_id, id: enquiry.id) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>

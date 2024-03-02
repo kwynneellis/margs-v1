@@ -1,24 +1,26 @@
 <div class="container mb-5">
-  <div class="back-button">
-    <%= link_to root_path do %>
-      <div>
-        <i class="fa-solid fa-arrow-left"></i>
-      </div>
+  <div class="my-4">
+    <div class="back-button my-3">
+      <%= link_to root_path do %>
+        <div>
+          <i class="fa-solid fa-arrow-left"></i>
+        </div>
+      <% end %>
+    </div>
+    <h2>Edit <%= @property.address %></h2>
+    <%= simple_form_for @property do |f| %>
+      <%= f.input :address %>
+      <%= f.input :title, as: :text %>
+      <%= f.input :description, as: :text %>
+      <%= f.input :description2, as: :text %>
+      <%= f.input :price_per_night %>
+      <%= f.input :minimum_nights %>
+      <%= f.input :cleaning_fee %>
+      <%= f.input :max_guests %>
+      <%= f.input :bedrooms %>
+      <%= f.input :bathrooms %>
+      <%= f.input :pet_friendly %>
+      <%= f.submit %>
     <% end %>
   </div>
-  <h2>Edit <%= @property.address %></h2>
-  <%= simple_form_for @property do |f| %>
-    <%= f.input :address %>
-    <%= f.input :title, as: :text %>
-    <%= f.input :description, as: :text %>
-    <%= f.input :description2, as: :text %>
-    <%= f.input :price_per_night %>
-    <%= f.input :minimum_nights %>
-    <%= f.input :cleaning_fee %>
-    <%= f.input :max_guests %>
-    <%= f.input :bedrooms %>
-    <%= f.input :bathrooms %>
-    <%= f.input :pet_friendly %>
-    <%= f.submit %>
-  <% end %>
 </div>
