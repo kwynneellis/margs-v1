@@ -17,21 +17,21 @@
         </tr>
       </thead>
       <tbody>
-        <% @enquiries.each do |enquiry| %>
+        <% @enquiries.sort_by(&:created_at).reverse.each do |enquiry| %>
           <tr>
             <th scope="row"><%= enquiry.id %></th>
-            <td class="fw-light"><%= enquiry.created_at.strftime("%H:%M %d-%m-%y") %></td>
+            <td class="fw-light"><%= enquiry.created_at.strftime("%d-%m-%y %H:%M") %></td>
             <td><%= enquiry.first_name.capitalize %> <%= enquiry.last_name.capitalize %></td>
             <td><%= (enquiry.check_out - enquiry.check_in).to_i %></td>
             <td><%= enquiry.check_in.strftime("%d %b %Y") %></td>
             <td><%= enquiry.check_out.strftime("%d %b %Y") %></td>
             <td><%= enquiry.guests %></td>
             <% if enquiry.with_pets %>
-              <td>✅</td>
+              <td>🐶</td>
             <% else %>
-              <td>🔘</td>
+              <td>-</td>
             <% end %>
-            <td><%= link_to "View", property_enquiry_path(property_id: enquiry.property_id, id: enquiry.id) %></td>
+            <td><%= link_to "View", property_enquiry_path(property_id: enquiry.property_id, id: enquiry.id), class: "text-decoration-none" %></td>
           </tr>
         <% end %>
       </tbody>
