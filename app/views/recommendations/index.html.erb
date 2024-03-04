@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="my-4">
+    <h2>All Recommendations</h2>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Created at</th></th>
+          <th scope="col">Name</th>
+          <th scope="col">View</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @recommendations.sort_by(&:created_at).reverse.each do |recommendation| %>
+          <tr>
+            <th scope="row"><%= recommendation.id %></th>
+            <td class="fw-light"><%= recommendation.created_at.strftime("%d-%m-%y %H:%M") %></td>
+            <td><%= recommendation.title.capitalize %> <%= recommendation.last_name.capitalize %></td>
+            <td><%= link_to "View", property_recommendation_path(property_id: recommendation.property_id, id: recommendation.id), class: "text-decoration-none" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

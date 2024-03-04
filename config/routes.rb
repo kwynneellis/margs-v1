@@ -8,5 +8,6 @@ Rails.application.routes.draw do
 
   resources :properties, only: [:index, :show, :edit, :update] do
     resources :enquiries, only: [:new, :create, :index, :show, :destroy]
+    resources :recommendations, only: [:new, :create, :index, :destroy]
   end
 end
