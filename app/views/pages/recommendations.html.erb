@@ -1,6 +1,11 @@
 <div class="container">
   <div class="recommendation-container my-4">
     <h1 class="text-center">Check out these guys...</h1>
+    <%= link_to new_property_recommendation_path(property_id: 1) do %>
+        <div class="m-2">
+          <i class="fa-solid fa-arrow-left"></i> New Reco
+        </div>
+      <% end %>
     <div class="row">
       <div class="d-flex flex-wrap justify-content-center">
         

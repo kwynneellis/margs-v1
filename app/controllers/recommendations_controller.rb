@@ -1,5 +1,6 @@
 class RecommendationsController < ApplicationController
-  before_action :set_property, only: %i[new create index show destroy]
+  before_action :set_property, only: %i[new create index show edit update destroy]
+  before_action :set_recommendation, only: %i[edit update show destroy]
 
   def new
     @recommendation = Recommendation.new
@@ -19,10 +20,29 @@ class RecommendationsController < ApplicationController
     @recommendations = Recommendation.all
   end
 
+  def edit
+  end
+
+  def update
+    @recommendation.update(recommendation_params)
+
+    redirect_to property_recommendations_path(@property)
+  end
+
+  def destroy
+    @recommendation.destroy
+
+    redirect_to property_recommendations_path(@property), status: :see_other
+  end
+
   private
 
   def set_property
     @property = Property.find(params[:property_id])
+  end
+
+  def set_recommendation
+    @recommendation = Recommendation.find(params[:id])
   end
 
   def recommendation_params
