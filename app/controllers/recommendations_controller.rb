@@ -1,4 +1,6 @@
 class RecommendationsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index]
+
   before_action :set_property, only: %i[new create index show edit update destroy]
   before_action :set_recommendation, only: %i[edit update show destroy]
 

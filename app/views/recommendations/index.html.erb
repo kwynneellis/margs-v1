@@ -3,28 +3,34 @@
     <div class="d-flex justify-content-between">
       <div></div>
       <h1 class="text-center">Check out these guys...</h1>
+      <% if user_signed_in? %>
       <%= link_to new_property_recommendation_path(property_id: @property.id) do %>
-          <button class="btn btn-primary">New</button>
+          <button class="btn btn-primary">Add + </button>
         <% end %>
+        <% else %>
+        <div></div>
+      <% end %>
       </div>
     <div class="row">
       <div class="d-flex flex-wrap justify-content-center">
 
-        <% @recommendations.sort_by(&:created_at).reverse.each do |recommendation| %>
-        <div class="card m-2" style="width: 25rem;">
+        <% @recommendations.sort_by(&:title).each do |recommendation| %>
+        <div class="card m-2" style="width: 20rem; height: 10rem;">
           <div class="row g-0">
-            <div class="col-md-4">
-              <iframe class="img-fluid rounded-start" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2489.6115724995693!2d1.389448299999989!3d51.3918166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d953bb2f32e4d9%3A0x470ebf35cd05c7b6!2sForts!5e0!3m2!1sen!2suk!4v1709571059000!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="col-4">
+              <%= recommendation.embedded_map.html_safe %>
             </div>
-            <div class="col-md-8">
+            <div class="col-8">
               <div class="card-body">
                 <div class="row">
                   <div class="col-10">
                     <h5 class="card-title"><%= recommendation.title %></h5>
                   </div>
                   <div class="col-2">
+                    <% if user_signed_in? %>
                     <p class="card-text"><%= link_to edit_property_recommendation_path(property_id: recommendation.property_id, id: recommendation.id), class: "text-decoration-none" do %>
                       <i class="fa-solid fa-pencil"></i><% end %></p>
+                      <% end %>
                   </div>
                 </div>
                 <div class="row">
@@ -33,10 +39,12 @@
                   </div>
                   <div class="col-2">
                     <p class="card-text">
+                      <% if user_signed_in? %>
                       <%= link_to property_recommendation_path(property_id: recommendation.property_id, id: recommendation.id),
                         data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
                           <i class="fa-solid fa-trash"></i>
                       <% end %></p>
+                      <% end %>
                   </div>
                 </div>
                 
