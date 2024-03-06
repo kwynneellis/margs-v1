@@ -1,6 +1,6 @@
 <!-- Modal -->
 <div class="modal fade" id="imagesGalleryModal" tabindex="-1" aria-labelledby="imagesGalleryModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-fullscreen modal-dialog-centered">
+  <div class="modal-dialog modal-fullscreen-lg-down modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header border-0">
         <h3 class="modal-title"></h3>
@@ -34,10 +34,12 @@
 
         <div class="row my-3 justify-content-center">
           <div class="col">
-            <div class="row my-3"><%= image_tag "terrarium1.jpeg", alt: "Telescope and terrarium", class: "d-block w-100 rounded" %></div>
-            <div class="row my-3"><%= image_tag "view3.jpeg", alt: "View 3 - the green in the sun", class: "d-block w-100 rounded" %></div>
+            <%= image_tag "terrarium1.jpeg", alt: "Telescope and terrarium", class: "d-block w-100 rounded mb-3" %>
+            <%= image_tag "view3.jpeg", alt: "View 3 - the green in the sun", class: "d-block w-100 rounded" %>
           </div>
-          <div class="col"><%= image_tag "view5.jpeg", alt: "View 5 - sunset with a drink", class: "d-block w-100 rounded" %></div>
+          <div class="col my-auto">
+            <%= image_tag "view5.jpeg", alt: "View 5 - sunset with a drink", class: "d-block w-100 rounded" %>
+          </div>
         </div>
         <div class="row my-3">
           <div class="col"><%= image_tag "view6.jpeg", alt: "View 6 - portrait sunset of the neighbouring building", class: "d-block w-100 rounded" %></div>
