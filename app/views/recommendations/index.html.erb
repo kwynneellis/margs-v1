@@ -28,7 +28,7 @@
                   </div>
                   <div class="col-2">
                     <% if user_signed_in? %>
-                    <p class="card-text"><%= link_to edit_property_recommendation_path(property_id: recommendation.property_id, id: recommendation.id), class: "text-decoration-none" do %>
+                    <p class="card-text"><%= link_to edit_property_recommendation_path(property_id: recommendation.property_id, id: recommendation.id), class: "text-decoration-none text-reset" do %>
                       <i class="fa-solid fa-pencil"></i><% end %></p>
                       <% end %>
                   </div>
@@ -41,7 +41,7 @@
                     <p class="card-text">
                       <% if user_signed_in? %>
                       <%= link_to property_recommendation_path(property_id: recommendation.property_id, id: recommendation.id),
-                        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none text-reset" do %>
                           <i class="fa-solid fa-trash"></i>
                       <% end %></p>
                       <% end %>

@@ -31,7 +31,7 @@
             <% else %>
               <td>-</td>
             <% end %>
-            <td><%= link_to "View", property_enquiry_path(property_id: enquiry.property_id, id: enquiry.id), class: "text-decoration-none" %></td>
+            <td><%= link_to "➡️", property_enquiry_path(property_id: enquiry.property_id, id: enquiry.id), class: "text-decoration-none text-reset" %></td>
           </tr>
         <% end %>
       </tbody>

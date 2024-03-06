@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-12 col-md-8">
-      <%= link_to property_enquiries_path(property_id: @property.id) do %>
+      <%= link_to property_enquiries_path(property_id: @property.id), class: "text-decoration-none text-reset" do %>
         <div class="m-2">
           <i class="fa-solid fa-arrow-left"></i> All enquiries
         </div>
@@ -14,7 +14,7 @@
             </div>
             <div class="col-1">
                 <%= link_to property_enquiry_path(property_id: @property.id, id: @enquiry),
-                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none text-reset"  do %>
                     <i class="fa-solid fa-trash"></i>
                 <% end %>
             </div>
@@ -84,9 +84,6 @@
           </li>
 
         </ul>
-        <div class="card-body justify-content-between">
-          <a href="#" class="card-link">Link to something helpful</a>
-        </div>
       </div>
     </div>
   </div>
