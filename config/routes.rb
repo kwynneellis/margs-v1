@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :properties, only: [:index, :show, :edit, :update] do
     resources :enquiries, only: [:new, :create, :index, :show, :destroy]
     resources :recommendations, only: [:new, :create, :index, :edit, :update, :destroy]
+    resources :bookings, only: [:new, :create, :index, :edit, :update, :destroy]
   end
 end

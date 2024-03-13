@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_03_13_181507) do
+ActiveRecord::Schema.define(version: 2024_03_13_193904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,16 @@ ActiveRecord::Schema.define(version: 2024_03_13_181507) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.string "name"
+    t.datetime "start_time", precision: 6
+    t.datetime "end_time", precision: 6
+    t.bigint "property_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["property_id"], name: "index_bookings_on_property_id"
   end
 
   create_table "enquiries", force: :cascade do |t|
@@ -106,6 +116,7 @@ ActiveRecord::Schema.define(version: 2024_03_13_181507) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bookings", "properties"
   add_foreign_key "enquiries", "properties"
   add_foreign_key "recommendations", "properties"
 end
