@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_03_04_171414) do
+ActiveRecord::Schema.define(version: 2024_03_13_181507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2024_03_04_171414) do
     t.string "message"
     t.string "email"
     t.string "mobile"
+    t.string "referral"
     t.index ["property_id"], name: "index_enquiries_on_property_id"
   end
 
