@@ -12,7 +12,7 @@ class EnquiryMailer < ApplicationMailer
     mail(
       to: @enquiry.email, 
       bcc: 'k.wynneellis@gmail.com',
-      subject: "Going to MarGreat?"
+      subject: "Thanks for your enquiry"
     )
   end
 
@@ -20,9 +20,9 @@ class EnquiryMailer < ApplicationMailer
     @enquiry = params[:enquiry]
 
     mail(
-      to: 'k.wynneellis@gmail.com', 
+      to: 'chrisspellman@hotmail.com', 
       bcc: 'k.wynneellis@gmail.com',
-      subject: "New Marg-cation, coming in HOT"
+      subject: "Marg-cation enquiry, coming in HOT"
     )
   end
 

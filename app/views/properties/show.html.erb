@@ -45,9 +45,11 @@
     <div class="col-12 col-md-6 col-lg-5">
       <div class="container p-2 m-1">
         <%= render "booking_calculator", property: @property, enquiry: Enquiry.new %>
-        </div>
       </div>
+    </div>
   </div>
+
+  <%= render "location" %>
 
   <%= render "amenities" %>
 
