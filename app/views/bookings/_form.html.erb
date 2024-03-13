@@ -10,10 +10,11 @@
           <% end %>
         </div>
         <div class="col text-end">
-          <%= link_to property_booking_path(property_id: @property.id, id: @booking),
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none text-reset" do %>
-              <i class="fa-solid fa-trash"></i>
-          <% end %>
+          <%# Below was breaking the 'new' form because there is no @booking to reference in the delete %>
+          <%# <%= link_to property_booking_path(property_id: @property.id, id: @booking), %>
+            <%# data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none text-reset" do %> 
+              <%# <i class="fa-solid fa-trash"></i> %>
+          <%# <% end %> 
         </div>
       </div>
       <%= simple_form_for [@property, @booking] do |f| %>

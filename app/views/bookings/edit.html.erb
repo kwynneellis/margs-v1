@@ -1,1 +1,9 @@
+<div class="container mt-3">
+  <div class="row text-end px-5">
+  <%= link_to property_booking_path(property_id: @property.id, id: @booking),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none text-secondary" do %>
+    Delete <i class="fa-solid fa-trash"></i>
+  <% end %>
+  </div>
+</div>
 <%= render "form", property: @property, booking: @booking %>
