@@ -1,2 +1,28 @@
-<h1>Bookings#index</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
+<div class="container mt-5 text-center">
+  <div class="d-flex justify-content-between">
+      <div></div>
+      <h1 class="text-center">Availability</h1>
+      <% if user_signed_in? %>
+        <%= link_to new_property_booking_path(property_id: @property.id) do %>
+          <button class="btn booking-calc-btn">Add + </button>
+        <% end %>
+      <% else %>
+      <div></div>
+      <% end %>
+    </div>
+  <%= month_calendar(events: @bookings) do |date, bookings| %>
+    <div class="day">
+      <%= date.day %>
+
+      <% bookings.each do | booking | %>
+        <div class="booking">
+          <% if user_signed_in? %>
+            <p><%= link_to booking.name, edit_property_booking_path(property_id: booking.property_id, id: booking.id), class: "text-reset" %></p>
+          <% else %>
+            <p>❌</p>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

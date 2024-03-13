@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 my-4">
+      <div class="row justify-content-between">
+        <div class="col">
+          <%= link_to property_bookings_path(property_id: @property.id), class: "text-decoration-none text-secondary" do %>
+          <div class="m-2">
+            <i class="fa-solid fa-arrow-left"></i> Calendar
+          </div>
+          <% end %>
+        </div>
+        <div class="col text-end">
+          <%= link_to property_booking_path(property_id: @property.id, id: @booking),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none text-reset" do %>
+              <i class="fa-solid fa-trash"></i>
+          <% end %>
+        </div>
+      </div>
+      <%= simple_form_for [@property, @booking] do |f| %>
+
+        <%= f.input :name %>
+        <%= f.input :start_time, as: :date, html5: true, label: 'Check-in', input_html: { min: Date.today } %>
+        <%= f.input :end_time, as: :date, html5: true, label: 'Check-out', input_html: { min: Date.today } %>
+
+        <%= f.submit "Save", class: "btn booking-calc-btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
