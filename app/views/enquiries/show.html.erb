@@ -32,6 +32,13 @@
 
           <li class="list-group-item">
             <div class="row">
+              <div class="col-3">Referred by:</div>
+              <div class="col"><%= @enquiry.referral %></div>
+            </div>
+          </li>
+
+          <li class="list-group-item">
+            <div class="row">
               <div class="col-3">Nights:</div>
               <div class="col"><%= (@enquiry.check_out - @enquiry.check_in).to_i %></div>
             </div>
