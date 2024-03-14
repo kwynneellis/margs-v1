@@ -1,8 +1,24 @@
 .simple-calendar {
-  table {
-    min-height: 80vh;
+  th{
+    color: grey;
+    opacity: 0.9;
   }
   .today {
     background-color: #FAF3DD;
+  }
+
+  .calendar-title {
+    font-size: x-large;
+  }
+
+  tbody {
+    font-weight: bold;
+  }
+
+  .has-events, .past {
+    color: grey;
+    opacity: 0.9;
+    font-weight: lighter;
+    text-decoration: line-through;
   }
 }

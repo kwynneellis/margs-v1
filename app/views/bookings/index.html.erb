@@ -1,15 +1,4 @@
 <div class="container mt-5 text-center">
-  <div class="d-flex justify-content-between">
-      <div></div>
-      <h1 class="text-center">Availability</h1>
-      <% if user_signed_in? %>
-        <%= link_to new_property_booking_path(property_id: @property.id) do %>
-          <button class="btn booking-calc-btn">Add + </button>
-        <% end %>
-      <% else %>
-      <div></div>
-      <% end %>
-    </div>
   <%= month_calendar(events: @bookings) do |date, bookings| %>
     <div class="day">
       <%= date.day %>
