@@ -1,9 +1,11 @@
-<div class="container mt-3">
-  <div class="row text-end px-5">
-  <%= link_to property_booking_path(property_id: @property.id, id: @booking),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none text-secondary" do %>
-    Delete <i class="fa-solid fa-trash"></i>
-  <% end %>
+<%= render "form", property: @property, booking: @booking %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 mt-2">
+    <%= link_to property_booking_path(property_id: @property.id, id: @booking),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none text-secondary" do %>
+       <i class="fa-solid fa-trash"></i> Delete
+    <% end %>
+    </div>
   </div>
 </div>
-<%= render "form", property: @property, booking: @booking %>
