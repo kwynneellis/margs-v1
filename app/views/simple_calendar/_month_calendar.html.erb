@@ -1,19 +1,17 @@
 <div class="simple-calendar">
-  <div class="d-flex align-items-center justify-content-between">
-    <div class="calendar-heading">
-      <nav class="d-flex justify-content-between">
-        <div class="btn btn-outline-secondary my-3"><%= link_to t('simple_calendar.previous', default: '<'), calendar.url_for_previous_view, class: "text-decoration-none text-reset" %></div>
-        <div class="btn btn-outline-secondary my-3"><%= link_to t('simple_calendar.next', default: '>'), calendar.url_for_next_view, class: "text-decoration-none text-reset" %></div>
-      </nav>
-    </div>
-    <time datetime="<%= start_date.strftime('%Y-%m') %>" class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></time>
-    <% if user_signed_in? %>
-        <%= link_to new_property_booking_path(property_id: @property.id) do %>
-          <button class="btn booking-calc-btn">Add + </button>
-        <% end %>
-      <% else %>
-      <div></div>
+  <div class="col-2 ms-auto justify-content-end">
+  <% if user_signed_in? %>
+      <%= link_to new_property_booking_path(property_id: @property.id) do %>
+        <button class="btn booking-calc-btn">Add + </button>
       <% end %>
+    <% else %>
+    <div></div>
+    <% end %>
+  </div>
+  <div class="d-flex align-items-center justify-content-between">
+    <div class="btn my-3"><%= link_to t('simple_calendar.previous', default: '<'), calendar.url_for_previous_view, class: "text-decoration-none text-reset" %></div>
+    <time datetime="<%= start_date.strftime('%Y-%m') %>" class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></time>
+    <div class="btn my-3"><%= link_to t('simple_calendar.next', default: '>'), calendar.url_for_next_view, class: "text-decoration-none text-reset" %></div>
   </div>
 
   <table class="table">

@@ -2,9 +2,7 @@
   th{
     color: grey;
     opacity: 0.9;
-  }
-  .today {
-    background-color: #FAF3DD;
+    max-width: 50px;
   }
 
   .calendar-title {
@@ -13,12 +11,41 @@
 
   tbody {
     font-weight: bold;
-  }
-
-  .has-events, .past {
-    color: grey;
-    opacity: 0.9;
-    font-weight: lighter;
-    text-decoration: line-through;
+    td {
+      height: 50px;
+      width: 50px;
+      text-align: center;
+      vertical-align: middle;
+      border-radius: 50%;
+      &.today {
+        background-color: #FAF3DD;
+        &:hover {
+          background-color: rgb(175, 212, 174);
+        }
+      }
+      &.future {
+        &:hover {
+          background-color: rgb(175, 212, 174);
+        }
+      }
+      &.past {
+        color: grey;
+        opacity: 0.9;
+        font-weight: lighter;
+        text-decoration: line-through;
+      }
+      &.has-events {
+        color: grey;
+        opacity: 0.9;
+        font-weight: lighter;
+        text-decoration: line-through;
+        &:hover {
+          background-color: rgb(227, 225, 225);
+        }
+        &.booking {
+          text-decoration: none;
+        }
+      }
+    }
   }
 }
