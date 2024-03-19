@@ -3,6 +3,7 @@ class PropertiesController < ApplicationController
 
   before_action :set_user, only: %i[edit update]
   before_action :set_property, only: %i[show edit update]
+  before_action :set_bookings, only: %i[show]
 
   def index
     @properties = Property.all
@@ -29,6 +30,10 @@ class PropertiesController < ApplicationController
 
   def set_property
     @property = Property.find(params[:id])
+  end
+
+  def set_bookings
+    @bookings = Booking.find(params[:id])
   end
 
   def property_params

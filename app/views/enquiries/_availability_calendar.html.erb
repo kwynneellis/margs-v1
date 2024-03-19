@@ -1,0 +1,15 @@
+<div class="booking-calculator-container container p-3 m-1 pt-3 mt-3">
+    <%= month_calendar(events: @bookings) do |date, bookings| %>
+      <div class="day">
+        <%= date.day %>
+
+        <% bookings.each do | booking | %>
+          <div class="booking">
+            <% if user_signed_in? %>
+              <p><%= link_to booking.name, edit_property_booking_path(property_id: booking.property_id, id: booking.id), class: "text-reset" %></p>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+</div>
