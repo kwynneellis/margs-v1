@@ -1,5 +1,10 @@
 .simple-calendar {
+  thead{
+    text-align: center;
+  }
+
   th{
+    text-align: center;
     color: grey;
     opacity: 0.9;
     max-width: 50px;

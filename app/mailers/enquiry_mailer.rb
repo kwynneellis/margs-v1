@@ -20,7 +20,7 @@ class EnquiryMailer < ApplicationMailer
     @enquiry = params[:enquiry]
 
     mail(
-      to: 'chrisspellman@hotmail.com', 
+      to: 'margatekipndip@gmail.com', 
       bcc: 'k.wynneellis@gmail.com',
       subject: "Marg-cation enquiry, coming in HOT"
     )
