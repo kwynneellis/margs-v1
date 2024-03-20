@@ -1,5 +1,5 @@
 <div class="container p-2 m-1 pt-3 mt-3">
-  <h4>Availability</h4>
+  <%= turbo_frame_tag 'calendar' do %>
     <%= month_calendar(events: @bookings) do |date, bookings| %>
       <div class="day">
         <%= date.day %>
@@ -13,4 +13,5 @@
         <% end %>
       </div>
     <% end %>
+  <% end %>
 </div>

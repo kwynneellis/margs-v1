@@ -1,4 +1,5 @@
 <div class="booking-calculator-container container p-3 m-1 pt-3 mt-3">
+  <%= turbo_frame_tag 'calendar' do %>
     <%= month_calendar(events: @bookings) do |date, bookings| %>
       <div class="day">
         <%= date.day %>
@@ -12,4 +13,5 @@
         <% end %>
       </div>
     <% end %>
+  <% end %>
 </div>
