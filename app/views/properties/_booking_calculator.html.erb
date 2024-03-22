@@ -2,7 +2,7 @@
   <div class="row border-bottom mb-2">
     <div class="col">
       <h6 class="text-dark">The whole property</h6>
-      <h4 class="text-dark">£<%= @property.price_per_night %> per night</h4>
+      <h4 class="text-dark">£80 - £120 per night</h4>
     </div>
   </div>
     <%= simple_form_for [@property, @enquiry] do |f| %>
@@ -30,7 +30,7 @@
   </div>
   
   <div class="row my-2">
-    <div class="col"><h5>Total</h5></div>
+    <div class="col"><h5>Estimated cost</h5></div>
     <div class="col text-end"><h5><p><span class='fw-bold' data-calculate-booking-target='total'></span></p></h5></div>
   </div>
   <div class="row">

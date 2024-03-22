@@ -1,16 +1,18 @@
 <div class="container">
   <div class="recommendation-container my-4">
-    <div class="row">
-      <div class="d-flex justify-content-between">
-        <div></div>
-        <h1 class="text-center">Check out these guys...</h1>
-        <% if user_signed_in? %>
-        <%= link_to new_property_recommendation_path(property_id: @property.id) do %>
-            <button class="btn booking-calc-btn">Add + </button>
-          <% end %>
-          <% else %>
+    <div class="row my-3">
+      <div class="col-12 col-md-10 col-lg-8 mx-auto">
+        <div class="d-flex justify-content-between">
           <div></div>
-        <% end %>
+          <h1 class="text-center">Check out these guys...</h1>
+          <% if user_signed_in? %>
+            <%= link_to new_property_recommendation_path(property_id: @property.id) do %>
+              <button class="btn booking-calc-btn">Add + </button>
+            <% end %>
+          <% else %>
+            <div></div>
+          <% end %>
+        </div>
       </div>
     </div>
 

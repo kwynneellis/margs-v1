@@ -1,4 +1,4 @@
-<div class="container p-2 m-1 pt-3 mt-3">
+<div class="container p-2 m-1">
   <%= turbo_frame_tag 'calendar' do %>
     <%= month_calendar(events: @bookings) do |date, bookings| %>
       <div class="day">
