@@ -1,15 +1,28 @@
 <div class="container mt-5 text-center">
-  <%= month_calendar(events: @bookings) do |date, bookings| %>
-    <div class="day">
-      <%= date.day %>
+  <div class="col-12 col-md-8 col-lg-6 mx-auto">
+    <div class="col-4 ms-auto">
+      <% if user_signed_in? %>
+          <%= link_to new_property_booking_path(property_id: @property.id) do %>
+            <button class="btn booking-calc-btn">Add + </button>
+          <% end %>
+        <% else %>
+        <div></div>
+      <% end %>
+    </div>
+    <%= turbo_frame_tag 'calendar' do %>
+      <%= month_calendar(events: @bookings) do |date, bookings| %>
+        <div class="day">
+          <%= date.day %>
 
-      <% bookings.each do | booking | %>
-        <div class="booking">
-          <% if user_signed_in? %>
-            <p><%= link_to booking.name, edit_property_booking_path(property_id: booking.property_id, id: booking.id), class: "text-reset" %></p>
+          <% bookings.each do | booking | %>
+            <div class="booking">
+              <% if user_signed_in? %>
+                <p><%= link_to booking.name, edit_property_booking_path(property_id: booking.property_id, id: booking.id), class: "text-reset" %></p>
+              <% end %>
+            </div>
           <% end %>
         </div>
       <% end %>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

@@ -18,6 +18,9 @@
       <ul class="navbar-nav ms-auto mb-lg-0">
         <% if user_signed_in? %>
             <li class="nav-item">
+              <%= link_to "New Booking", new_property_booking_path(property_id: 1), class: "nav-link text-end" %>
+            </li>
+            <li class="nav-item">
               <%= link_to "Enquiries", property_enquiries_path(property_id: 1), class: "nav-link text-end" %>
             </li>
             <li class="nav-item">

@@ -33,7 +33,7 @@ class PropertiesController < ApplicationController
   end
 
   def set_bookings
-    @bookings = Booking.find(params[:id])
+    @bookings = Booking.where(params[:booking_id])
   end
 
   def property_params

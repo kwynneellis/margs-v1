@@ -1,60 +1,64 @@
 <div class="container">
   <div class="recommendation-container my-4">
-    <div class="d-flex justify-content-between">
-      <div></div>
-      <h1 class="text-center">Check out these guys...</h1>
-      <% if user_signed_in? %>
-      <%= link_to new_property_recommendation_path(property_id: @property.id) do %>
-          <button class="btn booking-calc-btn">Add + </button>
-        <% end %>
-        <% else %>
-        <div></div>
-      <% end %>
-      </div>
     <div class="row">
-      <div class="d-flex flex-wrap justify-content-center">
+      <div class="d-flex justify-content-between">
+        <div></div>
+        <h1 class="text-center">Check out these guys...</h1>
+        <% if user_signed_in? %>
+        <%= link_to new_property_recommendation_path(property_id: @property.id) do %>
+            <button class="btn booking-calc-btn">Add + </button>
+          <% end %>
+          <% else %>
+          <div></div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-10 col-lg-8 mx-auto">
 
         <% @recommendations.sort_by(&:title).each do |recommendation| %>
-        <div class="card m-2" style="width: 20rem; height: 10rem;">
-          <div class="row g-0">
-            <div class="col-4">
-              <%= recommendation.embedded_map.html_safe %>
-            </div>
-            <div class="col-8">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-10">
-                    <h5 class="card-title"><%= recommendation.title %></h5>
-                  </div>
-                  <div class="col-2">
-                    <% if user_signed_in? %>
-                    <p class="card-text"><%= link_to edit_property_recommendation_path(property_id: recommendation.property_id, id: recommendation.id), class: "text-decoration-none text-reset" do %>
-                      <i class="fa-solid fa-pencil"></i><% end %></p>
-                      <% end %>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-10">
-                    <p class="card-text"><small class="text-muted"><%= recommendation.subtitle %></small></p>
-                  </div>
-                  <div class="col-2">
-                    <p class="card-text">
+          <div class="card m-2">
+            <div class="row g-0">
+              <div class="col-4">
+                <%= recommendation.embedded_map.html_safe %>
+              </div>
+              <div class="col-8">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-10">
+                      <h5 class="card-title"><%= recommendation.title %></h5>
+                    </div>
+                    <div class="col-2">
                       <% if user_signed_in? %>
-                      <%= link_to property_recommendation_path(property_id: recommendation.property_id, id: recommendation.id),
-                        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none text-reset" do %>
-                          <i class="fa-solid fa-trash"></i>
-                      <% end %></p>
-                      <% end %>
+                      <p class="card-text"><%= link_to edit_property_recommendation_path(property_id: recommendation.property_id, id: recommendation.id), class: "text-decoration-none text-reset" do %>
+                        <i class="fa-solid fa-pencil"></i><% end %></p>
+                        <% end %>
+                    </div>
                   </div>
+                  <div class="row">
+                    <div class="col-10">
+                      <p class="card-text"><small class="text-muted"><%= recommendation.subtitle %></small></p>
+                    </div>
+                    <div class="col-2">
+                      <p class="card-text">
+                        <% if user_signed_in? %>
+                        <%= link_to property_recommendation_path(property_id: recommendation.property_id, id: recommendation.id),
+                          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none text-reset" do %>
+                            <i class="fa-solid fa-trash"></i>
+                        <% end %></p>
+                        <% end %>
+                    </div>
+                  </div>
+                  
+                  <p class="card-text"><%= recommendation.description %></p>
+                  <p class="card-text"><%= recommendation.type %></p>
                 </div>
-                
-                <p class="card-text"><%= recommendation.description %></p>
-                <p class="card-text"><%= recommendation.type %></p>
               </div>
             </div>
           </div>
-        </div>
         <% end %>
+
       </div>
     </div>
 
