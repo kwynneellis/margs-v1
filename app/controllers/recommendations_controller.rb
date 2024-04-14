@@ -48,6 +48,6 @@ class RecommendationsController < ApplicationController
   end
 
   def recommendation_params
-    params.require(:recommendation).permit(:title, :subtitle, :description, :embedded_map, :type)
+    params.require(:recommendation).permit(:title, :subtitle, :description, :embedded_map, :recommendation_category)
   end
 end
