@@ -47,8 +47,8 @@
         &:hover {
           background-color: rgb(227, 225, 225);
         }
-        &.booking {
-          text-decoration: none;
+        .booking a{
+          text-decoration: none !important;
         }
       }
     }
