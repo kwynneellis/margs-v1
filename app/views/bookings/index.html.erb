@@ -17,7 +17,7 @@
           <% bookings.each do | booking | %>
             <div class="booking">
               <% if user_signed_in? %>
-                <p><%= link_to booking.name, edit_property_booking_path(property_id: booking.property_id, id: booking.id), class: "text-reset" %></p>
+                <%= link_to booking.name, edit_property_booking_path(property_id: booking.property_id, id: booking.id), class: "text-reset", data: {turbo_frame: "_top"} %>
               <% end %>
             </div>
           <% end %>
