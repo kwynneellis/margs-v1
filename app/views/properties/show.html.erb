@@ -25,10 +25,11 @@
       </div>  
     </div>
 
-    <div class="container border-bottom p-2 m-1">
+    <div class="container border-bottom p-2 m-1" data-controller="property-show">
       <p><%= simple_format(@property.description) %></p>
       <p>
-        <a class="text-reset" data-bs-toggle="collapse" href="#collapsePropDesc" role="button" aria-expanded="false" aria-controls="collapsePropDesc">
+        <%# NOTE: Check the stimulus controllers if you update the copy of this link %>
+        <a class="text-reset" data-bs-toggle="collapse" href="#collapsePropDesc" role="button" aria-expanded="false" aria-controls="collapsePropDesc" data-action="click->property-show#readMoreLess" data-property-show-target="text">
           Read more...
         </a>
       </p>
