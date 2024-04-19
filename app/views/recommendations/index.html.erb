@@ -1,5 +1,6 @@
 <div class="container">
   <div class="recommendation-container my-4">
+
     <div class="row my-3">
       <div class="col-12 col-md-10 col-lg-8 mx-auto">
         <div class="d-flex justify-content-between">
@@ -22,7 +23,7 @@
         <% @recommendations.sort_by(&:title).each do |recommendation| %>
           <div class="card m-2">
             <div class="row g-0">
-              <div class="col-4">
+              <div class="col-4 recommendation-map">
                 <%= recommendation.embedded_map.html_safe %>
               </div>
               <div class="col-8">

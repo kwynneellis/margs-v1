@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-12 col-md-8 my-4">
-  <%= link_to property_recommendations_path(property_id: @property.id) do %>
-        <div class="m-2">
-          <i class="fa-solid fa-arrow-left"></i> All
+  <%= link_to property_recommendations_path(property_id: @property.id), class: "text-decoration-none text-secondary" do %>
+        <div class="mb-3">
+          <i class="fa-solid fa-arrow-left"></i> Recommendations
         </div>
       <% end %>
       <%= simple_form_for [@property, @recommendation] do |f| %>
@@ -11,7 +11,7 @@
         <%= f.input :title %>
         <%= f.input :subtitle %>
         <%= f.input :description %>
-        <%= f.input :embedded_map, label: 'Embedded map. Add class="img-fluid rounded-start" inside the iframe tag' %>
+        <%= f.input :embedded_map, label: 'Map link from google maps -> share -> embed a map', placeholder: '<iframe  src="https://www.google.com/maps/embed?...' %>
         <%= f.input :recommendation_category %>
 
         <%= f.submit "Save", class: "btn btn-primary" %>
