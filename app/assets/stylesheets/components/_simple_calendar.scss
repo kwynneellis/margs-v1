@@ -7,7 +7,6 @@
     text-align: center;
     color: grey;
     opacity: 0.9;
-    max-width: 50px;
   }
 
   .calendar-title {
@@ -17,8 +16,8 @@
   tbody {
     font-weight: bold;
     td {
-      height: 50px;
-      width: 50px;
+      height: 4rem;
+      width: 4rem;
       text-align: center;
       vertical-align: middle;
       border-radius: 50%;
@@ -37,13 +36,17 @@
         color: grey;
         opacity: 0.9;
         font-weight: lighter;
-        text-decoration: line-through;
+        .date{
+          text-decoration: line-through;
+        }
       }
       &.has-events {
         color: grey;
         opacity: 0.9;
         font-weight: lighter;
-        text-decoration: line-through;
+        .date{
+          text-decoration: line-through;
+        }
         &:hover {
           background-color: rgb(227, 225, 225);
         }
