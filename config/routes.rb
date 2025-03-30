@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   root to: "properties#show", id: 1
 
   resources :properties, only: [:index, :show, :edit, :update] do
-    resources :enquiries, only: [:new, :create, :index, :show, :destroy]
+    get "/get-in-touch-2317", to: 'enquiries#new', as: :new_enquiry
+    resources :enquiries, only: [:create, :index, :show, :destroy]
     resources :recommendations, only: [:new, :create, :index, :edit, :update, :destroy]
     resources :bookings, only: [:new, :create, :index, :edit, :update, :destroy]
   end
