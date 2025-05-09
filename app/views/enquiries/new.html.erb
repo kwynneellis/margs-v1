@@ -1,43 +1,38 @@
 <div class="container">
-  <div class="row row-cols-1 row-cols-md-2">
-    <div class="col-12 col-md-5 col-lg-6 my-4">
-      <%= simple_form_for [@property, @enquiry] do |f| %>
-      <h3>I'd love to hear from you.</h3>
-      <p>If you're thinking about a visit, complete this form and I'll be in touch regarding availability and all the other details.</p>
-        <div class="row mt-2 pt-3">
-          <div class="col"><%= f.input :first_name %></div>
-          <div class="col"><%= f.input :last_name %></div>
+  <div class="col-sm-6 my-4 mx-auto">
+    <%= simple_form_for [@property, @enquiry] do |f| %>
+    <h3>I'd love to hear from you.</h3>
+    <p>If you're thinking about a visit, complete this form and I'll be in touch regarding availability and all the other details.</p>
+      <div class="row mt-2 pt-3">
+        <div class="col"><%= f.input :first_name %></div>
+        <div class="col"><%= f.input :last_name %></div>
+      </div>
+
+      <%= f.input :email %>
+      <%= f.input :mobile %>
+
+      <div class="row mt-2">
+        <label for="">Minimum stay: <%= @property.minimum_nights %> nights</label>
+      </div>
+
+      <div class="row mt-2">
+        <div class="col"><%= f.input :check_in, as: :date, html5: true, label: 'Check-in', input_html: { min: Date.today } %></div>
+        <div class="col"><%= f.input :check_out, as: :date, html5: true, label: 'Check-out', input_html: { min: Date.today } %></div>
+      </div>
+
+      <div class="row mt-2">
+        <div class="col"><%= f.input :guests, as: :select, collection: Property::GUESTS, label: "Guests" %>
         </div>
-
-        <%= f.input :email %>
-        <%= f.input :mobile %>
-
-        <div class="row mt-2">
-          <label for="">Minimum stay: <%= @property.minimum_nights %> nights</label>
-        </div>
-
-        <div class="row mt-2">
-          <div class="col"><%= f.input :check_in, as: :date, html5: true, label: 'Check-in', input_html: { min: Date.today } %></div>
-          <div class="col"><%= f.input :check_out, as: :date, html5: true, label: 'Check-out', input_html: { min: Date.today } %></div>
-        </div>
-
-        <div class="row mt-2">
-          <div class="col"><%= f.input :guests, as: :select, collection: Property::GUESTS, label: "Guests" %>
-          </div>
-          <div class="col">
-            <div class="row">
-              <%= f.input :with_pets, label: "Bringing pets", boolean_style: :inline %>
-            </div>
+        <div class="col">
+          <div class="row">
+            <%= f.input :with_pets, label: "Bringing pets", boolean_style: :inline %>
           </div>
         </div>
-        <%= f.input :message %>
-        <%= f.input :referral, label: "How did you hear about us?" %>
+      </div>
+      <%= f.input :message %>
+      <%= f.input :referral, label: "How did you hear about us?" %>
 
-        <%= f.submit "Send", class: "btn booking-calc-btn" %>
-      <% end %>
-    </div>
-    <div class="col-12 col-md-7 col-lg-6 my-4">
-      <%= render "availability_calendar" %>
-    </div>
+      <%= f.submit "Send", class: "btn booking-calc-btn" %>
+    <% end %>
   </div>
 </div>

@@ -25,27 +25,8 @@
       </div>  
     </div>
 
-    <div class="container border-bottom p-2 m-1" data-controller="property-show">
+    <div class="container p-2 m-1">
       <p><%= simple_format(@property.description) %></p>
-      <p>
-        <%# NOTE: Check the stimulus controllers if you update the copy of this link %>
-        <a class="text-reset" data-bs-toggle="collapse" href="#collapsePropDesc" role="button" aria-expanded="false" aria-controls="collapsePropDesc" data-action="click->property-show#readMoreLess" data-property-show-target="text">
-          Read more...
-        </a>
-      </p>
-      <div class="collapse" id="collapsePropDesc">
-          <p><%= simple_format(@property.description2) %></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="row row-cols-1 row-cols-md-2 mt-2">
-    <div class="col-12 col-md-6 my-auto">
-      <%= render "availability_calendar" %>
-    </div>
-
-    <div class="col-12 col-md-6 my-auto">
-      <%= render "booking_calculator", property: @property, enquiry: Enquiry.new %>
     </div>
   </div>
 
