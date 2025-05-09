@@ -11,7 +11,7 @@
     <%= simple_form_for @property do |f| %>
       <%= f.input :address %>
       <%= f.input :title, as: :text %>
-      <%= f.input :description, as: :text %>
+      <%= f.input :description, as: :text, input_html: { style: "height: 200px;" } %>
       <%= f.input :description2, as: :text %>
       <%= f.input :price_per_night %>
       <%= f.input :minimum_nights %>
