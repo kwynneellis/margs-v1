@@ -33,7 +33,7 @@ export default class extends Controller {
           (diffInDays * pricePerDay) + cleaningFee
         ).toLocaleString()}</span>`;
 
-      } else if (diffInDays === 0 && diffInDays < 2) {
+      } else if (diffInDays >= 0 && diffInDays <= 1) {
         // displays 2-night minimum if check out is same as check in
         this.infoTarget.innerText = "";
         this.totalTarget.innerText = "";

@@ -42,7 +42,7 @@ class EnquiriesController < ApplicationController
   end
   
   def set_bookings
-    @bookings = Booking.where(params[:booking_id])
+    @bookings = @property.bookings
   end
 
   def enquiry_params
