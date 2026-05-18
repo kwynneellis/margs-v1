@@ -6,7 +6,7 @@ one:
   price_per_night: 1
   minimum_nights: 1
   cleaning_fee: 1
-  guests: 1
+  max_guests: 4
   bedrooms: 1
   bathrooms: 1
   pet_friendly: false
@@ -17,7 +17,7 @@ two:
   price_per_night: 1
   minimum_nights: 1
   cleaning_fee: 1
-  guests: 1
+  max_guests: 4
   bedrooms: 1
   bathrooms: 1
   pet_friendly: false
