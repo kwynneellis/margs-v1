@@ -19,7 +19,7 @@ class RecommendationsController < ApplicationController
   end
 
   def index
-    @recommendations = Recommendation.all
+    @recommendations = @property.recommendations
   end
 
   def edit

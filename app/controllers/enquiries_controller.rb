@@ -19,7 +19,7 @@ class EnquiriesController < ApplicationController
   end
 
   def index
-    @enquiries = Enquiry.all
+    @enquiries = @property.enquiries
   end
 
   def show
