@@ -5,7 +5,7 @@ one:
   subtitle: MyString
   description: MyString
   embedded_map: MyString
-  type: 
+  recommendation_category: MyString
   property: one
 
 two:
@@ -13,5 +13,5 @@ two:
   subtitle: MyString
   description: MyString
   embedded_map: MyString
-  type: 
+  recommendation_category: MyString
   property: two
